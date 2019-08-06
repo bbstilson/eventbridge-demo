@@ -3,22 +3,6 @@ import com.amazonaws.services.sqs.AmazonSQSClientBuilder
 import scala.concurrent.duration.Duration
 import scala.concurrent.{ Await, ExecutionContext, Future }
 
-/*
-        ______________
-       /              \
-      v                |
- |---------|      |-----------|
- | Primary |      | Secondary |
- |---------|      |-----------|
-      |                ^
-       \              /
-        --------------
-
-
-Primary -> eventbridge:brandons-funland -> sqs:s2-BrandonsFunLand-Secondary -> Secondary
-Secondary -> eventbridge:brandons-funland -> sqs:s2-BrandonsFunLand -> Primary
-*/
-
 object Main {
 
   def main(args: Array[String]): Unit = {
